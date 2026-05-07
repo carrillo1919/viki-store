@@ -1,8 +1,8 @@
-import User from './User.js';
-import Role from './Role.js';
-import Permission from './Permission.js';
-import Product from './Product.js';
-import Movement from './Movement.js';
+import { User } from './User.js';
+import { Role } from './Role.js';
+import { Permission } from './Permission.js';
+import { Product } from './Product.js';
+import { Movement } from './Movement.js';
 
 // Define associations
 User.belongsTo(Role, {

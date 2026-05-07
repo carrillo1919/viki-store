@@ -124,7 +124,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
@@ -158,15 +158,15 @@ const loadDashboard = async () => {
     const movements = movementsRes.data
 
     stats.value.totalProducts = products.length
-    stats.value.totalStock = products.reduce((sum: number, p: any) => sum + p.stock, 0)
-    stats.value.lowStock = products.filter((p: any) => p.stock <= p.minStock).length
+    stats.value.totalStock = products.reduce((sum, p) => sum + p.stock, 0)
+    stats.value.lowStock = products.filter((p) => p.stock <= p.minStock).length
 
     const today = new Date().toDateString()
-    stats.value.todayMovements = movements.filter((m: any) =>
+    stats.value.todayMovements = movements.filter((m) =>
       new Date(m.createdAt).toDateString() === today
     ).length
 
-    lowStockProducts.value = products.filter((p: any) => p.stock <= p.minStock)
+    lowStockProducts.value = products.filter((p) => p.stock <= p.minStock)
   } catch (error) {
     console.error('Error loading dashboard:', error)
   }

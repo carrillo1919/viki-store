@@ -2,11 +2,21 @@
 
 Viki-Store es un Sistema de Gestión de Inventarios (IMS) profesional, modular y seguro diseñado para operaciones tanto humanas (vía web) como autónomas (vía agentes como OpenClaw/Telegram/WhatsApp).
 
+## Quick Start 🚀
+
+Para levantar el proyecto rápidamente, ver [QUICK_START.md](QUICK_START.md)
+
+O ejecuta el script de verificación:
+```bash
+chmod +x health-check.sh
+./health-check.sh
+```
+
 ## Arquitectura
 
 Este proyecto utiliza una estructura de monorepositorio con las siguientes carpetas:
 
-- `/server`: Backend en Node.js + Express (TypeScript)
+- `/server`: Backend en Node.js + Express (JavaScript)
 - `/client`: Frontend en Vue 3 + Tailwind CSS + Pinia
 - `/shared`: Especificaciones OpenAPI y tipos comunes
 - `/docker`: Configuraciones de Docker
@@ -21,12 +31,19 @@ Este proyecto utiliza una estructura de monorepositorio con las siguientes carpe
 - **Logs**: Winston/Morgan con rotación de archivos
 - **Tests**: Jest
 
-## Instalación y Configuración
+## Instalación Rápida
 
-### Prerrequisitos
+### Opción 1: Script automático (Recomendado)
+```bash
+chmod +x setup.sh
+./setup.sh
+```
 
+### Opción 2: Manual
+
+#### Prerrequisitos
 - Node.js 18+
-- Docker y Docker Compose
+- Docker y Docker Compose  
 - PostgreSQL (o usar Docker)
 
 ### Configuración

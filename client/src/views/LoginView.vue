@@ -51,7 +51,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
@@ -74,7 +74,7 @@ const handleLogin = async () => {
   try {
     await authStore.login(credentials.value)
     router.push('/')
-  } catch (err: any) {
+  } catch (err) {
     error.value = err.response?.data?.message || 'Error al iniciar sesión'
   } finally {
     loading.value = false
