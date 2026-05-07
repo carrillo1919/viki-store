@@ -2,15 +2,33 @@
 
 Viki-Store es un Sistema de Gestión de Inventarios (IMS) profesional, modular y seguro diseñado para operaciones tanto humanas (vía web) como autónomas (vía agentes como OpenClaw/Telegram/WhatsApp).
 
-## Quick Start 🚀
+## 🚀 Quick Start - Levantar el Proyecto
 
-Para levantar el proyecto rápidamente, ver [QUICK_START.md](QUICK_START.md)
+### Opción 1: TODO DE UNA VEZ (1 minuto)
 
-O ejecuta el script de verificación:
 ```bash
-chmod +x health-check.sh
-./health-check.sh
+chmod +x start-all.sh
+./start-all.sh
 ```
+
+Luego abre: **http://localhost:5173**
+
+### Opción 2: Paso a Paso (Ver [PASOS.md](PASOS.md))
+
+```bash
+chmod +x start-db.sh start-backend.sh start-frontend.sh seed-db.sh
+./start-db.sh        # Terminal 1: Base de datos
+./seed-db.sh         # Terminal 2: Datos de prueba
+./start-backend.sh   # Terminal 3: Backend
+./start-frontend.sh  # Terminal 4: Frontend
+```
+
+**Credenciales de prueba:**
+- Username: `admin` | Password: `admin123`
+- Username: `manager` | Password: `manager123`
+- Username: `staff` | Password: `staff123`
+
+Ver documentación detallada: [PASOS.md](PASOS.md)
 
 ## Arquitectura
 
